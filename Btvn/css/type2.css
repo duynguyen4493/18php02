@@ -1,0 +1,116 @@
+.wrap>div {
+	float: left;
+}
+.h_1, .h_2, .h_3, .s_1, .s_2 {
+	float: left;
+	margin: 5px 2%;
+}
+.header {
+	width: 100%;
+	height: 120px;
+}
+.h_1 {
+	background: orange;
+	width: 30%;
+	height: 50px;
+}
+.h_2 {
+	background: green;
+	width: 20%;
+	height: 50px;
+}
+.h_3 {
+	background: blue;
+	width: 90%;
+	height: 50px;
+}
+.sidebar {
+	background: green;
+	width: 15%;
+	height: 230px;
+	display: none;
+}
+.container {
+	width: 100%;
+	height: 700px;
+}
+.s_1 {
+	background: pink;
+	height: 100px;
+}
+.s_2 {
+	background: grey;
+	height: 50px;
+}
+@media only screen
+and (max-width: 480px) {
+	.h_1 {
+		width: 96%;
+		position: relative;
+		top: 55px;
+	}
+	.h_2, .h_3 {
+		position: relative;
+		bottom: 65px;
+	}
+	.h_2 {
+		float: right;
+		margin-left: 0;
+	}
+	.h_3 {
+		width: 76%;
+		margin-right: 0;
+	}
+	.s_1, .s_2 {
+		width: 96%;
+	}
+}
+@media only screen
+and (min-width: 481px)
+and (max-width: 768px) {
+	
+	.h_1 {
+		width: 25%;
+	}
+	.h_2, .h_3 {
+		float: right;
+	}
+	.h_3, .s_1 {
+		width: 96%;
+	}
+	.s_2 {
+		width: 46%;
+	}
+}
+@media only screen
+and (min-width: 769px) {
+	.header {
+		height: 60px;
+	}
+	.h_2 {
+		display: none;
+	}
+	.sidebar {
+		display: block;
+		margin-top: 4px;
+		margin-left: 2%; 
+	}
+	.h_1 {
+		width: 15%;
+	}
+	.h_3 {
+		width: 74%;
+	}
+	.container {
+		width: 80%;
+		margin-left: 2.5%;
+	}
+	.s_1 {
+	width: 28%;
+	height: 150px;
+	}
+	.s_2 {
+	width: 12%;
+	height: 70px;
+}
+}
