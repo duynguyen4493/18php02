@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Form_Register</title>
+	<link rel="stylesheet" type="text/css" href="css/type2.css">
+</head>
+<body>
+	<div class="container">
+		<div class="top">
+			<h1>Đăng kí học viên</h1>
+		</div>
+		<div class="reg">
+			<form class="register" name="regiter" action="" method="post">
+				<label for="user_name">Họ và tên</label><br/>
+				<input type="text" name="user_name"><br/>
+				<label for="number_phone">Số điện thoại</label><br/>
+				<input type="text" name="number_phone"><br/>
+				<label for="email">Email</label><br/>
+				<input type="text" name="email"><br/>
+				<label for="password">Mật khẩu</label><br/>
+				<input type="text" name="password"><br/>
+				<label for="gender">Giới tính</label><br/>
+				<input type="radio" name="gender" value="1">Nam <br/>
+				<input type="radio" name="gender" value="1">Nữ <br/>
+				<input type="radio" name="gender" value="1">Khác <br/>
+				<label for="faviourite">Sở thích</label><br/>
+				<input type="checkbox" name="faviourite1"> Sport
+				<input type="checkbox" name="faviourite2"> Music
+				<input type="checkbox" name="faviourite3"> Treval <br/>
+				<label for="intro">Giới thiệu về bản thân</label><br/>
+				<textarea name="intro" cols="40" rows="10"></textarea><br/>
+				<label for="avatar">Hình đại diện</label><br/>
+				<input id="avatar" type="file" name="avatar"><br/>
+				<label for="city">Tỉnh/TP</label><br/>
+				<select name="city">
+					<option value="hanoi">Hà Nội</option>
+					<option value="danang">Đà Nẵng</option>
+					<option value="hochiminh">Hồ Chí Minh</option>
+					<option value="cantho">Cần Thơ</option>
+					<option value="binhduong">Bình Dương</option>
+				</select><br/>
+				<button type="reset" name="reset">Reset</button>
+				<button type="submit" name="register">Register</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
