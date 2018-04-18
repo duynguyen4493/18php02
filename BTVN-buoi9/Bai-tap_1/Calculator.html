@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/type.css">
+</head>
+<body>
+	<div class="wrap">
+		<div class="content">
+			<p id="screen"></p>
+		</div>
+		<div class="keyboard">
+			<button value="7" class="Number">7</button>
+			<button value="8" class="Number">8</button>
+			<button value="9" class="Number">9</button>
+			<button value="+" class="Key">+</button>
+			<button value="4" class="Number">4</button>
+			<button value="5" class="Number">5</button>
+			<button value="6" class="Number">6</button>
+			<button value="-" class="Key">-</button>
+			<button value="1" class="Number">1</button>
+			<button value="2" class="Number">2</button>
+			<button value="3" class="Number">3</button>
+			<button value="x" class="Key">x</button>
+			<button value="0" class="Number">0</button>
+			<button value="." class="Number">.</button>
+			<button value="=" id="Result">=</button>
+			<button value="/" class="Key">/</button>
+			<button class="b1" onclick="back()">CE</button>
+			<button class="b1" onclick="empty()">AC</button>
+		</div>
+	</div>
+	<!-- javascript -->
+	<script language="javascript">
+		var string = "";
+		var operator, a, b, lastResult;
+		var number = document.getElementsByClassName('Number');
+		for (var i = 0; i < number.length; i++) {
+			number[i].onclick = function() {
+				string = string + this.value;
+				document.getElementById('screen').innerHTML = string;
+			}
+		}
+		var key = document.getElementsByClassName('Key');
+		for (var i = 0; i < key.length; i++) {
+			key[i].onclick = function() {
+				operator = this.value;
+				a = string;
+				string = string + this.value;
+				document.getElementById('screen').innerHTML = string;
+			}
+		}
+		var result = document.getElementById('Result');
+		result.onclick = function(){
+			b = string.slice(a.length + 1);
+			a = parseFloat(a);
+			b = parseFloat(b);
+			if (operator == "+") {lastResult = a + b;}
+			else if (operator == "-") {lastResult = a - b;}
+			else if (operator == "x") {lastResult = a * b;}
+			else if (operator == "/") {lastResult = a / b;}
+			if (operator == "") {lastResult = string;}
+			lastResult = Math.round(lastResult * 1000) / 1000;
+			document.getElementById('screen').innerHTML = lastResult;
+		}
+		function back() {
+			string = string.slice(0, (string.length - 1));
+			document.getElementById('screen').innerHTML = string;
+		}
+		function  empty() {
+			string = "";
+			document.getElementById('screen').innerHTML = string;
+			operator = "";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+.wrap {
+	padding: 0;
+	margin: auto;
+	width: 20%;
+	height: 370px;
+	border: solid 2px black;
+}
+.content {
+	font-family: 'Lato', sans-serif;
+	width: 95%;
+	margin: 0 5px;
+	height: 70px;
+	float: left;
+	border: solid 1px #5d3434;
+	border-radius: 2px;
+	margin-top: 5px;
+	font-size: 25px;
+}
+.content p {
+	float: right;
+	padding-right: 5px;
+	color: #1f0640;
+}
+.keyboard {
+	float: left;
+	clear: both;
+	margin-top: 10px;
+	
+}
+button {
+	border: solid 1px black;
+	border-radius: 5px;
+	font-size: 22px;
+}
+button:hover {
+	border-color: blue;
+	color: red;
+}
+.Number, .Key, #Result {
+	float: left;
+	width: 60px;
+	height: 50px;
+	margin: 3px 3.2px;
+}
+.b1 {
+	width: 46%;
+	height: 50px;
+	margin: 3px;
+	background: #8e1717a8;
+}
+#Result {
+	background: #49495f;
+}
+.Key {
+	background: #a75829;
+}
