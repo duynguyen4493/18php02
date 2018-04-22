@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="">
+	<style>
+	img {
+		width: 300px;
+		height: 300px;
+	}
+	img, form, p, button {
+		float: left;
+		margin: 10px;
+	}
+	form {
+		height: 100px;
+	}
+	p {
+		clear: both;
+	}
+	#maleList, #femaleList {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<img id="avatar" src="lib/avatar.jpg" alt="hinh dai dien">
+	
+	<form action="#" method="GET">
+		Ten:<input type="text" id="name"><br/>
+		Nam Sinh:<input type="number" id="age"><br/>
+		<input id="male" type="radio" name="gender" value="0">Nam<br>
+		<input id="female" type="radio" name="gender" value="1">Nu
+		<div id="maleList">
+		Football<input class="maleHobby" type="checkbox" value="Footbal">
+		Gym<input class="maleHobby" type="checkbox" value="Gym">
+		Volleyball<input class="maleHobby" type="checkbox" value="Volleyball">
+		</div>
+		<div id="femaleList">
+			Shoping<input class="femaleHobby" type="checkbox" value="Shoping">
+			Spa<input class="femaleHobby" type="checkbox" value="Spa">
+			Yoga<input class="femaleHobby" type="checkbox" value="Yoga">
+		</div>
+	</form>
+	<button id="btn" >Submit</button>
+	<p id="text">Ho va ten</p>
+	<script language="javascript" src="common.js"></script>
+</body>
+</html>
