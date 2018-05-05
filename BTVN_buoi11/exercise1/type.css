@@ -1,0 +1,30 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.wrap {
+	font-family: arial, Helvetica, sans-serif;
+	font-size: 15px;
+	margin: auto;
+	width: 30%;
+	color: #090080d4;
+}
+section {
+	text-transform: uppercase;
+	height: 0;
+}
+input {
+	height: 30px;
+	margin-bottom: 10px;
+	border: 1px solid #12610cd9;
+}
+span {
+	height: 0;
+	color: red;
+	margin-top: 10px;
+	display: block;
+}
+button {
+	width: 80px;
+	height: 40px;
+}
