@@ -15,10 +15,10 @@ $(document).ready(function() {
 		$(slide[currentSlide - 1]).show();
 	}
 	showSlider(currentSlide);
-	$("#prev").on("click", function() {
+	$("#prev").click(function() {
 		showSlider(currentSlide -= 1);
 	});
-	$("#next").on("click", function() {
+	$("#next").click(function() {
 		showSlider(currentSlide += 1);
 	});
 });
