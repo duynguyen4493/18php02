@@ -1,19 +1,17 @@
 <?php
-$result = [2, 6, 10, 13, 17, 20];
-$q = isset($_GET['q']) ? $_GET['q'] : "";
+$result     = [2, 6, 10, 13, 17, 20];
+$q          = isset($_GET['q'])?$_GET['q']:"";
 $lastResult = "";
 if (!empty($q)) {
 	for ($i = 0; $i < count($result); $i++) {
 		if ($result[$i] == $q) {
 			$lastResult = "Chúc mừng bạn đã trúng thưởng với số ".$q;
 			break;
-		}
-		else {
+		} else {
 			$lastResult = "Chúc bạn may mắn lần sau!";
 		}
 	}
-}
-else {
+} else {
 	$lastResult = 'Vui lòng chọn 1 số';
 }
 ?>
@@ -28,7 +26,7 @@ else {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	
+
 </head>
 <body>
 	<div style="margin-left: 100px">
@@ -40,7 +38,8 @@ else {
 			<button>Search</button>
 		</form>
 		<div>
-			<p style="font-size: 20px; color: blue;" id="result"><?php echo $lastResult; ?></p>
+			<p style="font-size: 20px; color: blue;" id="result"><?php echo $lastResult;
+?></p>
 		</div>
 	</div>
 </body>
