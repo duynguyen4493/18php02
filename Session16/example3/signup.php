@@ -1,0 +1,48 @@
+<?php
+
+	$name = isset($_GET["name"]) ? $_GET["name"] : "";
+	$mail = isset($_GET["mail"]) ? $_GET["mail"] : "";
+	$pass = isset($_GET["pass"]) ? $_GET["pass"] : "";
+
+	if ($pass) {
+		$mdPass = md5($pass);
+	} else $mdPass = "";
+
+	$phone = isset($_GET["phone"]) ? $_GET["phone"] : "";
+
+	if (!$name || !$mail || !$mdPass || !$phone) {
+		echo "Phải nhập đầy đủ thông tin";
+	} else {
+		//kiểm tra thư mục file nếu không tồn tại thì tạo thư mục đó
+		if (!is_dir("file")) {
+			mkdir("file");
+		}
+		$filename = "file/user.txt";
+		$fp = @fopen($filename, "a+");
+		if (!$fp) {
+		    echo 'Mở file không thành công';
+		}
+		else {
+			$check = true;
+			$content = file_get_contents($filename);
+			if ($content == "") {
+				$string = "$name - $mail - $mdPass - $phone";
+			} else {
+				$string = "\n$name - $mail - $mdPass - $phone";
+				//kiểm tra xem có trùng email không
+				if ( strpos($content, trim($mail)) ) {
+					$check = false;
+					echo 'Trùng email';
+				}
+			}
+		    if($check) {
+		    	fwrite($fp, $string);
+		    	echo "Bạn đã đăng kí thành công! Click vào link bên dưới để đăng nhập";
+		    	echo "</br>";
+		    	echo "<a href='http:&sol;&sol;18php02.com/Session16/example3/login.html'>login.html</a>";
+		    }
+		    fclose($fp);
+		}
+	}
+	
+?>

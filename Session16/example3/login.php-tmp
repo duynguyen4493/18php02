@@ -1,0 +1,36 @@
+<?php
+session_start();
+
+$mail                 = isset($_GET["mail"])?$_GET["mail"]:"";
+$_SESSION['loadMail'] = $_GET["mail"];
+$pass                 = isset($_GET["pass"])?$_GET["pass"]:"";
+$mdPass               = md5($pass);
+$_SESSION['loadPass'] = $mdPass;
+if (!is_dir("file")) {
+	mkdir("file");
+}
+$fp = @fopen("file/user.txt", "r");
+if (!$fp) {
+	echo 'Mở file không thành công';
+} else {
+	//đọc từng dòng của file
+	$check = true;
+	while (!feof($fp)) {
+		$content = fgets($fp);
+		$array   = explode("-", $content);
+		if (trim($mail) == trim($array[1]) && trim($mdPass) == trim($array[2])) {
+			echo "xin chao $array[0]";
+			echo "</br>";
+			echo "Click vào lick để cập nhật thông tin ";
+			echo "<a href='http:&sol;&sol;18php02.com/Session16/example3/homepage.html'>homepage</a>";
+
+			$check = false;
+			break;
+		}
+	}
+	if ($check) {echo "Bạn đã nhập sai email hoặc mật khẩu";
+	}
+
+	fclose($fp);
+}
+?>
