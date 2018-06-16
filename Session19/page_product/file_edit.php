@@ -47,7 +47,6 @@
 
             //update image
             if ($_FILES['image']['tmp_name'] != NULL) {
-                echo "hehehe";
                 $target_file = "../images/" . basename($_FILES['image']['name']);
                 $target_file_edit = "images/" . basename($_FILES['image']['name']);
                 $uploadOk = 1;
@@ -68,9 +67,18 @@
                 }
                 if ($uploadOk == 1) {
                     if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
-                        $stmt_5 = $conn->prepare("UPDATE products SET imageName = :image_name WHERE productId = :product_id");
-                        $data_5 = array('image_name' => $target_file_edit, 'product_id' => $getId);
+                        $stmt_5 = $conn->prepare("SELECT imageName FROM products WHERE productId = :product_id");
+                        $data_5 = array('product_id' => $getId);
                         $stmt_5->execute($data_5);
+                        $result = $stmt_5->fetch(PDO::FETCH_ASSOC);
+                        $fileName = "../" . $result['imageName'];
+                        if (file_exists($fileName)) {
+                            unlink($fileName);
+                        }
+
+                        $stmt_6 = $conn->prepare("UPDATE products SET imageName = :image_name WHERE productId = :product_id");
+                        $data_6 = array('image_name' => $target_file_edit, 'product_id' => $getId);
+                        $stmt_6->execute($data_6);
                         $checkUpdate = TRUE;
                     }
                 } else echo "file upload không thành công";
