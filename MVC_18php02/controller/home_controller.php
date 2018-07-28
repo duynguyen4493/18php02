@@ -49,10 +49,6 @@
 						}
 					}
 					break;
-
-				case 'logout':
-					include 'views/user/listProduct.php';
-					break;
 			}
 		}
 
