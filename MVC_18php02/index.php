@@ -1,7 +1,3 @@
-<?php 
-	require_once 'config/connect.php';
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +25,7 @@
 <body>
 	<div class="wraper">
 		<header>
-			<?php require_once 'views/header.php'; ?>
+			<?php include 'views/user/header.php'; ?>
 		</header>
 		
 		<main>
